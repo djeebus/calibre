@@ -241,14 +241,6 @@ extensions = [
                 sip_files=['calibre/gui2/progress_indicator/QProgressIndicator.sip']
                 ),
 
-    Extension('qt_hack',
-                ['calibre/ebooks/pdf/render/qt_hack.cpp'],
-                inc_dirs=['calibre/ebooks/pdf/render'],
-                headers=['calibre/ebooks/pdf/render/qt_hack.h'],
-                qt_private=['core', 'gui'],
-                sip_files=['calibre/ebooks/pdf/render/qt_hack.sip']
-                ),
-
     Extension('unrar',
               ['unrar/%s.cpp'%(x.partition('.')[0]) for x in '''
                rar.o strlist.o strfn.o pathfn.o savepos.o smallfn.o global.o file.o
