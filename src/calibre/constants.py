@@ -143,7 +143,6 @@ class Plugins(collections.Mapping):
                 'html',
                 'freetype',
                 'unrar',
-                'qt_hack',
                 '_regex',
                 'hunspell',
                 '_patiencediff_c',
