@@ -501,11 +501,14 @@ class Build(Command):
          self.check_call(qmc + [ext.name+'.pro'])
          so you would have to look a the source to see the actual command.
         """
+        if 'stdout' not in kwargs:
+            kwargs['stdout'] = subprocess.STDOUT
+
         try:
-            subprocess.check_call(*args, **kwargs)
-        except:
+            subprocess.check_output(*args, **kwargs)
+        except Exception as e:
             cmdline = ' '.join(['"%s"' % (arg) if ' ' in arg else arg for arg in args[0]])
-            print "Error while executing: %s\n" % (cmdline)
+            print "Error while executing: %s\n%s\n%s\n" % (cmdline, e, e.output)
             raise
 
     def build_headless(self):
