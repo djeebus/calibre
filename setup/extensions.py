@@ -501,8 +501,8 @@ class Build(Command):
          self.check_call(qmc + [ext.name+'.pro'])
          so you would have to look a the source to see the actual command.
         """
-        if 'stdout' not in kwargs:
-            kwargs['stdout'] = subprocess.STDOUT
+        if 'stderr' not in kwargs:
+            kwargs['stderr'] = subprocess.STDOUT
 
         try:
             subprocess.check_output(*args, **kwargs)
